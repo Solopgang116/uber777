@@ -5,6 +5,40 @@ header
 nav 
 	height: 50px 
 	background: rgb(33, 33, 33) 
+
+// глобальные переиспользуемые компоннты
+.label 
+	color: rgb(255, 255, 255) 
+	font-size: 11px 
+	font-weight: 400 
+	line-height: 29px 
+	text-align: center 
+	text-transform: uppercase 
+	background: rgb(0, 0, 0) 
+	margin: 0 auto 
+	width: 115px 
+	height: 27px 
+
+.title
+	color: rgb(34, 34, 34) 
+	font-size: 38px 
+	font-weight: 700 
+	line-height: 48px 
+	text-align: center 
+	text-transform: uppercase 
+	margin-top: 32px 
+	margin-bottom: 19px 	 
+	
+.subtitle
+	color: rgb(34, 34, 34)
+	font-size: 17px
+	font-weight: 400
+	text-align: center
+	margin-bottom: 10px
+	
+	
+
+	// шапка сайта
 .menu 
 	display: flex 
 	justify-content: space-between 
@@ -110,7 +144,8 @@ nav
 .resons 
 	min-height: 767px 
 	background: rgb(255, 255, 255) 
-	.resons__suptitle 
+	padding: 18px 0 64px 0
+	.resons__label
 		color: rgb(255, 255, 255) 
 		font-size: 11px 
 		font-weight: 400 
@@ -119,7 +154,6 @@ nav
 		text-transform: uppercase 
 		background: rgb(0, 0, 0) 
 		margin: 0 auto 
-		margin-top: 18px 
 		width: 115px 
 		height: 27px 
 	.resons__title 
@@ -157,3 +191,55 @@ nav
 		justify-content: center 
 		align-items: center 
 		margin-right: 26px
+// третья секция
+.mobile
+	min-height: 864px // обозначи объём
+	padding: 48px 0 80px 0
+	background: rgb(255, 255, 255) // обозначил внутренние границы
+	&__item
+		position: relative
+		width: 320px // подогнал размер для карточек
+		height: 280px
+		margin: 0 auto // выставил по центру
+		margin-top: 20px
+		padding: 88px 0 34px 0 // выставил внутренний отступ
+		// display: flex // раскидал текст и плюс 
+		// flex-direction: column // текст вверху , плюс внизу
+		// justify-content: space-between // к верхнему и нижнему краю
+		// align-items: center // спозиционировав по центру
+		&_1 // для каждой карточки свой background
+			background: url('../img/item1.jpeg') center (center/cover) no-repeat
+		&_2	
+			background: url('../img/item2.jpeg') center (center/cover) no-repeat
+		&_3
+			background: url('../img/item3.jpeg') center (center/cover) no-repeat
+		&_4
+			background: url('../img/item4.jpeg') center (center/cover) no-repeat
+		&_5
+			background: url('../img/item5.jpeg') center (center/cover) no-repeat
+		&_6				
+			background: url('../img/item6.jpeg') center (center/cover) no-repeat
+		&_link // стилизовал текст
+			display: block
+			color: rgb(255, 255, 255)
+			font-size: 24px
+			font-weight: 400
+			text-align: center
+			text-transform: uppercase
+		&_plus
+			position: absolute
+			bottom: 35px
+			right: 50%
+			transform: translateX(50%) // если - смещение в лево, если + в право
+			width: 29px
+			height: 29px
+			background: rgb(0, 0, 0)
+			border-radius: 100%
+			margin: 0 auto
+			display: flex // нужно откалибровать плюс  
+			justify-content: center//  внутри собственного блока
+			align-items: center // по x и y
+			cursor: pointer // при наведении видно, что можно нажать на элемент
+			padding: 6px // отступы как в макете
+			img
+				width: 100% // ограничение картинки по h и w в 100%  от родителя т.е 29х29рх
