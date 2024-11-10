@@ -1,0 +1,219 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  position: relative;
+}
+
+nav {
+  height: 50px;
+  background: rgb(33, 33, 33);
+}
+
+.menu {
+  display: flex; /* чтобы раскидать элементы   */
+  justify-content: space-between; /* чтобы раскидать элементы по горизонтали*/
+  align-items: center;
+  padding: 13px 70px;
+  margin: 0; /* у меню есть граница из-за rebot  */
+  list-style-type: none; /* убираю маркер у ul*/
+}
+
+.menu .menu__link {
+  color: rgb(255, 255, 255);
+  /*font-family: Roboto;  убираю т.к прописан в *{} */
+  font-size: 15px;
+  font-weight: 300;
+  /*line-height: 15px;  убираю т.к это свойство применяется при наличии большого текста*/
+  /*letter-spacing: 0px;  убираю т.к это свойство описывает расстояние между символами*/
+  /*text-align: left;  убираю т.к это никак не влияет потому что у .menu есть св-во justify-content: space-between;*/
+}
+
+.menu .menu__item {
+  border-right: 2px dotted rgb(0, 0, 0);
+  padding-right: 28px; /*в браузере Edge при таком значении отображение ломается. там достаточно 13px  */
+}
+
+.menu .menu__item:last-child {
+  border-right: none;
+}
+
+.subheader {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 84px;
+}
+
+.subheader .subheader__logo {
+  display: block;
+  min-width: 100%;
+  margin-top: 16px;
+}
+
+.subheader .subheader__logo-text {
+  margin-top: 6px;
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.subheader .subheader__call {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 300;
+  text-align: right;
+  margin-top: 19px; /* было 23 по макету, 19 - чтобы верхние
+   грани кнопки и теста были на одном уровн */
+}
+
+.subheader .subheader__phone {
+  display: block;
+  margin-top: 8px;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 400;
+  text-align: right;
+  line-height: 12px; /* чтобы выровнить номер, т.к элемент занимает 
+  пространство больше чем контент в нём*/
+}
+
+.subheader .subheader__btn {
+  /* text */
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1 rgba(0, 0, 0, 0.12);
+  /* btn */
+  border-radius: 4px;
+  border: none;
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(0deg, rgb(30, 172, 199), rgb(76, 226, 255) 100%);
+  margin-top: 19px;
+  min-width: 172px; /* если контента будет больше в кнопке, то будет норм отображаться и-за min  */
+  height: 46px;
+}
+
+/* первая секция */
+
+.promo {
+  min-height: 800px;
+  background: url('../img/uber_bg.jpeg') center center/cover no-repeat;
+  padding: 151px 0 135px 0;
+}
+
+.promo .promo__header {
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 60px;
+  margin: 0;
+}
+
+.promo .promo__subheader {
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 36px;
+  margin: 0;
+  margin-top: 22px;
+}
+
+.promo .promo__descr {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 23px;
+}
+
+.promo .promo__btn {
+  /* text */
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  /* btn */
+  display: block;
+  border-radius: 4px;
+  box-shadow: inset 0px -4px 0px 0px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(0deg, rgb(30, 172, 199), rgb(76, 226, 255) 100%);
+  width: 259px;
+  height: 63px;
+  border: none;
+  margin: 0 auto; /* margin: 0 auto; и margin-top: 118px;*/
+  margin-top: 118px; /* можно заменить на margin: 118px auto 0 auto */
+}
+
+/* вторая секция */
+
+.resons {
+  min-height: 767px;
+  background: rgb(255, 255, 255);
+}
+
+.resons .resons__suptitle {
+  color: rgb(255, 255, 255);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(0, 0, 0);
+  margin: 0 auto;
+  margin-top: 18px;
+  width: 115px;
+  height: 27px;
+}
+
+.resons .resons__title {
+  color: rgb(34, 34, 34);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 32px;
+  margin-bottom: 17px;
+}
+
+.resons .resons__item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.resons .resons__round {
+  background: rgb(30, 172, 199);
+  width: 116px;
+  height: 116px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resons .resons__item .resons__text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 21px;
+  text-align: left;
+  width: 370px;
+}
+.resons .resons__item .resons__text span {
+  color: rgb(30, 172, 199);
+}
+.resons .resons__wrapper .resons__round {
+  margin-right: 25px;
+}
