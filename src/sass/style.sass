@@ -1,3 +1,8 @@
+// переменные
+	
+$primary__color:rgb(30, 172, 199)
+	
+	
 * 
 	font-family: 'Roboto', sans-serif 
 header 
@@ -18,16 +23,22 @@ nav
 	margin: 0 auto 
 	width: 115px 
 	height: 27px 
+	&__white
+		background:#fff
+		color: rgb(7, 7, 22)
 
 .title
 	color: rgb(34, 34, 34) 
 	font-size: 38px 
 	font-weight: 700 
-	line-height: 48px 
 	text-align: center 
 	text-transform: uppercase 
 	margin-top: 32px 
-	margin-bottom: 19px 	 
+	margin-bottom: 19px 	
+	&__white
+		color: rgb(255, 255, 255)
+		margin-top: 26px
+		margin-bottom: 0px 
 	
 .subtitle
 	color: rgb(34, 34, 34)
@@ -35,6 +46,11 @@ nav
 	font-weight: 400
 	text-align: center
 	margin-bottom: 10px
+	&__white
+		color: rgb(255, 255, 255)
+		margin-bottom: 54px
+
+
 	
 	
 
@@ -177,13 +193,13 @@ nav
 			text-align: left 
 			width: 343px // срений диапазон по блокам
 			span 
-				color: rgb(30, 172, 199) 
+				color: $primary__color 
 				font-weight: 400 
 				font-size: 17px
 				text-align: left 
 
 	.resons__round 
-		background: rgb(30, 172, 199) 
+		background: $primary__color 
 		width: 116px 
 		height: 116px 
 		border-radius: 100% 
@@ -243,3 +259,13 @@ nav
 			padding: 6px // отступы как в макете
 			img
 				width: 100% // ограничение картинки по h и w в 100%  от родителя т.е 29х29рх
+// четвёртая секция
+.car
+	min-height: 900px
+	padding: 27px 0 138px 0
+	background: linear-gradient(#070716 502px, #ffffff 397px)
+	&__text
+		color: rgb(34, 34, 34)
+		font-size: 17px
+		font-weight: 300
+		text-align: center
