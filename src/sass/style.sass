@@ -1,7 +1,19 @@
 // переменные
 	
 $primary__color:rgb(30, 172, 199)
+$second__color: rgb(255, 86, 86)
+
+
+
+//_________________________________________
 	
+// миксины
+=btn__hover 
+	&:hover
+		background-image: none
+		background-color: $primary__color
+
+//_________________________________________
 	
 * 
 	font-family: 'Roboto', sans-serif 
@@ -114,6 +126,7 @@ nav
 		margin-top: 19px 
 		min-width: 172px 
 		height: 46px 
+		+btn__hover
 .promo 
 	min-height: 800px 
 	background: url('../img/uber_bg.jpeg') center center/cover no-repeat 
@@ -157,6 +170,7 @@ nav
 		border: none 
 		margin: 0 auto 
 		margin-top: 118px 
+		+btn__hover
 .resons 
 	min-height: 767px 
 	background: rgb(255, 255, 255) 
@@ -256,10 +270,29 @@ nav
 			justify-content: center//  внутри собственного блока
 			align-items: center // по x и y
 			cursor: pointer // при наведении видно, что можно нажать на элемент
-			padding: 6px // отступы как в макете
-			img
-				width: 100% // ограничение картинки по h и w в 100%  от родителя т.е 29х29рх
-// четвёртая секция
+			&:before
+				content: ''
+				display: block
+				width: 2px
+				height: 14px
+				background-color: $primary__color
+				transition: 0.3s all
+
+			&:after
+				content: ''
+				display: block
+				width: 14px
+				height: 2px
+				position: absolute // выровнелось само 
+				// right: 50% // 
+				// transform: translateX(50%)
+				background-color: $primary__color
+				transition: 0.3s all
+			&:hover
+				&:before, &:after
+					background-color: $second__color
+					
+
 .car
 	min-height: 900px
 	padding: 27px 0 138px 0
@@ -269,3 +302,54 @@ nav
 		font-size: 17px
 		font-weight: 300
 		text-align: center
+
+// пятая секция 
+.conditions 
+	min-height: 763px
+	padding: 68px 0 84px 0
+	&__self, &__our
+		color: $primary__color
+		font-size: 22px
+		font-weight: 400
+		text-align: left
+		margin-top: 14px
+	&__list
+		padding-left: 50px
+		list-style-type: none
+		margin-top: 20px
+	&__item
+		// display: inline-block
+		margin-bottom: 10px
+		color: rgb(34, 34, 34)
+		font-size: 17px
+		font-weight: 300
+		text-align: left
+		position: relative
+		&::before
+			content: ''
+			display: inline-block
+			// vertical-align: middle
+			// transform: translate(-5px, -2px)
+			position: absolute
+			left: -32px
+			// transform: translateX(-50%)
+			top: 3px
+			width: 21px
+			height: 20px
+			background: url('../icon/check_blue.png') center (center/cover) no-repeat
+			// margin-right: 15px
+		&_red
+			&::before
+				background: url('../icon/check_red.png') center (center/cover) no-repeat
+	&__text
+		color:  $primary__color
+		font-size: 17px
+		font-weight: 300
+		text-align: left
+	&__need,&__doc
+		color: $second__color
+		font-size: 22px
+		font-weight: 400
+		text-align: left
+		margin-top: 60px
+	
